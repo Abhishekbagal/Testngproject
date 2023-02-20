@@ -21,12 +21,14 @@ public class logintestcase extends baseclass {
 		
 		LoginPageObject obj=new LoginPageObject(driver);
 		
-		obj.username().sendKeys("username");
-		obj.password().sendKeys("password");
+		obj.username().sendKeys(username);
+		obj.password().sendKeys(password);
 		obj.login().click();
-		obj.tryforfree().click();
+		//obj.tryforfree().click();
 		
-		commonmethods.handleassertion(obj.errortext().getText(), "Please check your username and password. If you still can't log in, contact your Salesforce administrator.","error message not matching");
+		Thread.sleep(2000);
+		
+		commonmethods.handleassertion(obj.errortext().getText(),constant.expect,constant.message);
 	}
 	
 	@DataProvider
