@@ -50,7 +50,7 @@ public class baseclass {
 		
 	}
 	
-	@BeforeMethod
+	/*@BeforeMethod
 	public void openurl() throws IOException {
 		
 		driverInitilize();
@@ -65,7 +65,7 @@ public class baseclass {
 		
 		driver.quit();
 		
-	}
+	}*/
 	
 	
 

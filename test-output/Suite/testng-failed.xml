@@ -7,9 +7,16 @@
         <methods>
           <include name="close"/>
           <include name="openurl"/>
-          <include name="login" invocation-numbers="0 1"/>
+          <include name="login"/>
         </methods>
       </class> <!-- testcases.logintestcase -->
+      <class name="testcases.signuptestcase">
+        <methods>
+          <include name="close"/>
+          <include name="openurl"/>
+          <include name="Signup"/>
+        </methods>
+      </class> <!-- testcases.signuptestcase -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

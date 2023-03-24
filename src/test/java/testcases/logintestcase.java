@@ -1,7 +1,11 @@
 package testcases;
 
 import java.io.IOException;
+import java.time.Duration;
 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -16,6 +20,18 @@ public class logintestcase extends baseclass {
 	
 	public void login(String username,String password) throws IOException, InterruptedException {
 		
+		System.setProperty("webdriver.chrome.driver", "G:\\chromedriver_win32\\chromedriver.exe");
+		ChromeOptions options=new ChromeOptions();
+		
+		options.addArguments("--remote-allow-origins=*");
+		
+		WebDriver driver=new ChromeDriver(options);
+		
+		driver.get("https://login.salesforce.com/");
+		
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+		
+		driver.manage().window().maximize();
 		
 		Thread.sleep(2000);
 		
@@ -29,6 +45,8 @@ public class logintestcase extends baseclass {
 		Thread.sleep(2000);
 		
 		commonmethods.handleassertion(obj.errortext().getText(),constant.expect,constant.message);
+		
+		driver.quit();
 	}
 	
 	@DataProvider
